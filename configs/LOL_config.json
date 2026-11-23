@@ -1,0 +1,48 @@
+{
+  "name": "LOL",
+  "full_name": "Locate with Once Look",
+  "version": "1.0",
+  "task": "RGB-D salient object detection (USOD10K)",
+  "architecture": {
+    "input_size": 352,
+    "patch_size": 16,
+    "token_grid": [22, 22],
+    "attn_depth": 8,
+    "attn_dim": 128,
+    "attn_heads": 4,
+    "kv_stride": 2,
+    "fuse": "Fusion(laplacian + learnable strip)",
+    "strip_kernel": [7, 15],
+    "dss": "soft router @ 1/4 resolution",
+    "dss_hp": false,
+    "decoder_levels": 4,
+    "refine_channels": 64,
+    "total_params": 3211947
+  },
+  "training": {
+    "dataset": "USOD10K",
+    "split": "train",
+    "epochs": 20,
+    "batch_size": 8,
+    "lr": 0.0002,
+    "optimizer": "AdamW",
+    "scheduler": "cosine + warmup",
+    "loss": {"bce": 0.25, "dice": 0.75},
+    "seed": 1,
+    "init_from": "v6.1 checkpoint (same dataset, earlier stage)",
+    "freeze": ["msf", "patch_embed", "depth_stem", "blocks", "norm"],
+    "trainable_params": 812259,
+    "best_epoch": 13,
+    "best_val_iou": 0.7859
+  },
+  "test_metrics": {
+    "MAE": 0.0353,
+    "maxFm": 0.8737,
+    "meanFm": 0.8608,
+    "maxEm": 0.9351,
+    "meanEm": 0.9290,
+    "Sm": 0.8833,
+    "AP": 0.8894,
+    "AUC": 0.9637
+  }
+}

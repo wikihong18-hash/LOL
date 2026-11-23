@@ -1,0 +1,1 @@
+USOD10K-test (net30_v7): 0.0353 mae || 0.8737 max-fm || 0.8608 mean-fm || 0.9351 max-Emeasure || 0.9290 mean-Emeasure || 0.8833 S-measure || 0.8894 AP || 0.9637 AUC.

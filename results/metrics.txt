@@ -1,0 +1,13 @@
+LOL (Locate with Once Look) — USOD10K test, seed 1
+MAE 0.0353 | maxFm 0.8737 | meanFm 0.8608 | maxEm 0.9351 | meanEm 0.9290 | Sm 0.8833 | AP 0.8894 | AUC 0.9637
+checkpoint: weights/LOL.pt (epoch 13, val IoU 0.7859)
+
+per-image mean IoU by GT area (n=1026):
+area        IoU     n
+XS <1%     0.5378   40
+S 1-5%     0.7544   279
+M 5-20%    0.8204   443
+L >20%     0.8148   264
+
+pooled IoU (sum intersection / sum union):
+all        0.7821

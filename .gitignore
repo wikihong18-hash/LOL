@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+preds/
+preds_*/
+metrics_*/
+area_*.log
+eval_*.log
+train_*.log
+/DATA/
